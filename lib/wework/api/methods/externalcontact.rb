@@ -4,7 +4,7 @@ module Wework
   module Api
     module Methods
       module Externalcontact
-        def get external_userid
+        def get_contact external_userid
           get 'externalcontact/get', params: {external_userid: external_userid}
         end
 
