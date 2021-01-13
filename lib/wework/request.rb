@@ -16,14 +16,14 @@ module Wework
 
     def get(path, get_header = {})
       request(path, get_header) do |url, header|
-        params = header.delete(:params)
+        params = header.delete(:params).merge(debug: 1)
         httprb.headers(header).get(url, params: params, ssl_context: ssl_context)
       end
     end
 
     def post(path, post_body, post_header = {})
       request(path, post_header) do |url, header|
-        params = header.delete(:params)
+        params = header.delete(:params).merge(debug: 1)
         httprb.headers(header).post(url, params: params, json: post_body, ssl_context: ssl_context)
       end
     end
