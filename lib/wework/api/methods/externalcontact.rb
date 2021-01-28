@@ -12,6 +12,10 @@ module Wework
           get 'externalcontact/get_contact_way', params: {config_id: config_id}
         end
 
+        def get_follow_user_list
+          get 'externalcontact/get_follow_user_list'
+        end
+
         def add_contact_way type, scene, state, user
           # https://work.weixin.qq.com/api/doc/90001/90143/92577
           payload = {type: type, scene: scene, state: state, user: user}
